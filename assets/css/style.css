@@ -23,7 +23,6 @@ body {
     max-width: 680px;
     margin: 0 auto;
     background: #011e4c;
-    min-height: auto;
     border-radius: 24px;
     padding: 40px 24px 30px;
     box-shadow: 0 4px 40px rgba(0, 0, 0, 0.5);
@@ -331,7 +330,6 @@ body {
 
     .container {
         border-radius: 0;
-        min-height: auto;
         padding: 32px 20px 24px;
         box-shadow: none;
     }
@@ -343,10 +341,5 @@ body {
 
     .profile h1 {
         font-size: 1.1rem;
-    }
-
-    .footer {
-        margin-top: 24px;
-        padding-top: 12px;
     }
 }
