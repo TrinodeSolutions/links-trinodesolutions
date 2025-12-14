@@ -1,0 +1,425 @@
+/* =============================================
+   TRINODE SOLUTIONS - LINKTREE STYLE
+   Warna Utama: #011e4c
+   ============================================= */
+
+/* === RESET === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* === BODY === */
+body {
+    font-family: 'Inter', sans-serif;
+    background: #000a1a;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* === CONTAINER === */
+.container {
+    max-width: 680px;
+    margin: 0 auto;
+    background: #011e4c;
+    min-height: calc(100vh - 40px);
+    border-radius: 24px;
+    padding: 40px 24px;
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Node texture background */
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        /* Nodes (circles) */
+        radial-gradient(circle at 10% 15%, rgba(255, 255, 255, 0.08) 2px, transparent 2px),
+        radial-gradient(circle at 85% 20%, rgba(255, 255, 255, 0.06) 3px, transparent 3px),
+        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.07) 2px, transparent 2px),
+        radial-gradient(circle at 90% 75%, rgba(255, 255, 255, 0.05) 4px, transparent 4px),
+        radial-gradient(circle at 50% 10%, rgba(255, 255, 255, 0.04) 3px, transparent 3px),
+        radial-gradient(circle at 5% 50%, rgba(255, 255, 255, 0.06) 2px, transparent 2px),
+        radial-gradient(circle at 95% 50%, rgba(255, 255, 255, 0.05) 2px, transparent 2px),
+        radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.03) 4px, transparent 4px),
+        radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.04) 3px, transparent 3px),
+        radial-gradient(circle at 15% 60%, rgba(255, 255, 255, 0.05) 2px, transparent 2px),
+        radial-gradient(circle at 80% 40%, rgba(255, 255, 255, 0.06) 2px, transparent 2px),
+        radial-gradient(circle at 40% 90%, rgba(255, 255, 255, 0.04) 3px, transparent 3px),
+        radial-gradient(circle at 60% 5%, rgba(255, 255, 255, 0.05) 2px, transparent 2px),
+        radial-gradient(circle at 25% 45%, rgba(255, 255, 255, 0.03) 3px, transparent 3px),
+        radial-gradient(circle at 75% 55%, rgba(255, 255, 255, 0.04) 2px, transparent 2px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Connection lines effect */
+.container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        /* Diagonal connection lines */
+        linear-gradient(45deg, transparent 48%, rgba(255, 255, 255, 0.02) 49%, rgba(255, 255, 255, 0.02) 51%, transparent 52%),
+        linear-gradient(-45deg, transparent 48%, rgba(255, 255, 255, 0.02) 49%, rgba(255, 255, 255, 0.02) 51%, transparent 52%),
+        linear-gradient(135deg, transparent 48%, rgba(255, 255, 255, 0.015) 49%, rgba(255, 255, 255, 0.015) 51%, transparent 52%);
+    background-size: 80px 80px, 80px 80px, 120px 120px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Ensure content is above the texture */
+.container > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* === PROFILE SECTION === */
+.profile {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.logo {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    margin-bottom: 16px;
+    object-fit: contain;
+}
+
+.profile h1 {
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.profile p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+
+/* === SOCIAL ICONS === */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    transition: all 0.2s ease;
+    border-radius: 50%;
+}
+
+.social-icon:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: scale(1.1);
+}
+
+.social-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* === LINKS === */
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.link-btn {
+    display: block;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    color: #011e4c;
+    text-decoration: none;
+    padding: 18px 24px;
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+    transition: all 0.15s ease;
+    border: none;
+    position: relative;
+    box-shadow: 
+        0 6px 0 #c4c4c4,
+        0 8px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+}
+
+.link-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 8px 0 #c4c4c4,
+        0 12px 20px rgba(0, 0, 0, 0.25);
+}
+
+.link-btn:active {
+    transform: translateY(4px);
+    box-shadow: 
+        0 2px 0 #c4c4c4,
+        0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* === BUTTON VARIANTS === */
+
+/* WhatsApp Button */
+.link-btn.whatsapp {
+    background: linear-gradient(145deg, #2de370, #20bd5a);
+    color: white;
+    box-shadow: 
+        0 6px 0 #1a9d4a,
+        0 8px 15px rgba(37, 211, 102, 0.4);
+}
+
+.link-btn.whatsapp:hover {
+    box-shadow: 
+        0 8px 0 #1a9d4a,
+        0 12px 20px rgba(37, 211, 102, 0.5);
+}
+
+.link-btn.whatsapp:active {
+    box-shadow: 
+        0 2px 0 #1a9d4a,
+        0 4px 8px rgba(37, 211, 102, 0.3);
+}
+
+/* Primary Button - Website Resmi (Biru) */
+.link-btn.primary {
+    background: linear-gradient(145deg, #4f93f7, #2563eb);
+    color: white;
+    box-shadow: 
+        0 6px 0 #1d4ed8,
+        0 8px 15px rgba(59, 130, 246, 0.4);
+}
+
+.link-btn.primary:hover {
+    box-shadow: 
+        0 8px 0 #1d4ed8,
+        0 12px 20px rgba(59, 130, 246, 0.5);
+}
+
+.link-btn.primary:active {
+    box-shadow: 
+        0 2px 0 #1d4ed8,
+        0 4px 8px rgba(59, 130, 246, 0.3);
+}
+
+/* Pricing Button - Kuning/Gold */
+.link-btn.pricing {
+    background: linear-gradient(145deg, #fbbf24, #d97706);
+    color: white;
+    box-shadow: 
+        0 6px 0 #b45309,
+        0 8px 15px rgba(245, 158, 11, 0.4);
+}
+
+.link-btn.pricing:hover {
+    box-shadow: 
+        0 8px 0 #b45309,
+        0 12px 20px rgba(245, 158, 11, 0.5);
+}
+
+.link-btn.pricing:active {
+    box-shadow: 
+        0 2px 0 #b45309,
+        0 4px 8px rgba(245, 158, 11, 0.3);
+}
+
+/* Portfolio Button - Ungu */
+.link-btn.portfolio {
+    background: linear-gradient(145deg, #a78bfa, #7c3aed);
+    color: white;
+    box-shadow: 
+        0 6px 0 #5b21b6,
+        0 8px 15px rgba(139, 92, 246, 0.4);
+}
+
+.link-btn.portfolio:hover {
+    box-shadow: 
+        0 8px 0 #5b21b6,
+        0 12px 20px rgba(139, 92, 246, 0.5);
+}
+
+.link-btn.portfolio:active {
+    box-shadow: 
+        0 2px 0 #5b21b6,
+        0 4px 8px rgba(139, 92, 246, 0.3);
+}
+
+/* === FEATURED LINK (with thumbnail) === */
+.featured-link {
+    background: #ffffff;
+    border-radius: 16px;
+    border: none;
+    overflow: hidden;
+    text-decoration: none;
+    color: #011e4c;
+    transition: all 0.2s ease;
+    display: block;
+}
+
+.featured-link:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.featured-link .thumbnail {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    background: linear-gradient(135deg, #011e4c 0%, #023e8a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.featured-link .thumbnail svg {
+    width: 64px;
+    height: 64px;
+    color: white;
+}
+
+.featured-link .content {
+    padding: 16px;
+    text-align: center;
+}
+
+.featured-link .content h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #011e4c;
+}
+
+.featured-link .content p {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* === FOOTER === */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.footer-logo:hover {
+    transform: scale(1.05);
+}
+
+.footer-logo-img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.footer-logo span {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.footer-logo:hover span {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.profile { 
+    animation: fadeIn 0.4s ease forwards; 
+}
+
+.social-icons { 
+    animation: fadeIn 0.4s ease 0.1s forwards; 
+    opacity: 0; 
+}
+
+.links > *:nth-child(1) { 
+    animation: fadeIn 0.4s ease 0.15s forwards; 
+    opacity: 0; 
+}
+
+.links > *:nth-child(2) { 
+    animation: fadeIn 0.4s ease 0.2s forwards; 
+    opacity: 0; 
+}
+
+.links > *:nth-child(3) { 
+    animation: fadeIn 0.4s ease 0.25s forwards; 
+    opacity: 0; 
+}
+
+.links > *:nth-child(4) { 
+    animation: fadeIn 0.4s ease 0.3s forwards; 
+    opacity: 0; 
+}
+
+.footer { 
+    animation: fadeIn 0.4s ease 0.35s forwards; 
+    opacity: 0; 
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 480px) {
+    body {
+        padding: 0;
+    }
+
+    .container {
+        border-radius: 0;
+        min-height: 100vh;
+        padding: 32px 20px;
+    }
+
+    .logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .profile h1 {
+        font-size: 1.1rem;
+    }
+
+    .featured-link .thumbnail {
+        height: 140px;
+    }
+}
