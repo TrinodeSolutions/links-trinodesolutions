@@ -266,90 +266,14 @@ body {
         0 4px 8px rgba(139, 92, 246, 0.3);
 }
 
-/* === FEATURED LINK (with thumbnail) === */
-.featured-link {
-    background: #ffffff;
-    border-radius: 16px;
-    border: none;
-    overflow: hidden;
-    text-decoration: none;
-    color: #011e4c;
-    transition: all 0.2s ease;
-    display: block;
-}
-
-.featured-link:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.featured-link .thumbnail {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    background: linear-gradient(135deg, #011e4c 0%, #023e8a 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.featured-link .thumbnail svg {
-    width: 64px;
-    height: 64px;
-    color: white;
-}
-
-.featured-link .content {
-    padding: 16px;
-    text-align: center;
-}
-
-.featured-link .content h3 {
-    font-size: 0.95rem;
-    font-weight: 600;
-    margin-bottom: 4px;
-    color: #011e4c;
-}
-
-.featured-link .content p {
-    font-size: 0.8rem;
-    color: #666;
-}
-
 /* === FOOTER === */
 .footer {
     text-align: center;
     margin-top: 40px;
     padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.footer-logo {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    transition: all 0.2s ease;
-}
-
-.footer-logo:hover {
-    transform: scale(1.05);
-}
-
-.footer-logo-img {
-    width: 28px;
-    height: 28px;
-    object-fit: contain;
-}
-
-.footer-logo span {
     color: rgba(255, 255, 255, 0.6);
     font-size: 0.8rem;
-    font-weight: 500;
-}
-
-.footer-logo:hover span {
-    color: rgba(255, 255, 255, 0.9);
 }
 
 /* === ANIMATIONS === */
