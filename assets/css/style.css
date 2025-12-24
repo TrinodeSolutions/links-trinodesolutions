@@ -326,12 +326,26 @@ body {
     body {
         padding: 0;
         background: #011e4c;
+        min-height: 100vh;
+        min-height: 100dvh;
     }
 
     .container {
         border-radius: 0;
         padding: 32px 20px 24px;
         box-shadow: none;
+        min-height: 100vh;
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .links {
+        flex: 1;
+    }
+
+    .footer {
+        margin-top: auto;
     }
 
     .logo {
